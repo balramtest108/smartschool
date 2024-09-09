@@ -1,0 +1,28 @@
+package test1.smartschool;
+
+import java.time.Duration;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+
+public class studentlogin {
+
+	public static void main(String[] args) throws InterruptedException {
+	ChromeOptions unsecure = new ChromeOptions();
+	unsecure.setAcceptInsecureCerts(true);
+		// TODO Auto-generated method stub
+WebDriver driver=new ChromeDriver(unsecure);
+driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5000));
+driver.get("https://smartidealsolution.com/admin/site/userlogin");
+driver.findElement(By.name("username")).sendKeys("bijiwo5307@konetas.com");
+driver.findElement(By.name("password")).sendKeys("s2rg4k");
+Thread.sleep(Duration.ofSeconds(80000));
+driver.findElement(By.className("btn")).click();
+
+
+
+	}
+
+}
