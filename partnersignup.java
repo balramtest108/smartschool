@@ -55,7 +55,8 @@ try {
 	// TODO Auto-generated catch block
 	e.printStackTrace();
 }
-
+Thread.sleep(120000);
+driver.findElement(By.id("otpsubmit")).click();
 
 
 
