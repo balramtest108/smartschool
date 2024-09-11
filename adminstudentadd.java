@@ -27,21 +27,19 @@ public class adminstudentadd {
 		driver.findElement(By.name("username")).sendKeys("remosi2606@kwalah.com");
 		driver.findElement(By.name("password")).sendKeys("cFtRtP");
 		Thread.sleep(15000);
+	 WebElement bttn = driver.findElement(By.className("btn"));
+	bttn.click();
+WebElement captch = driver.findElement(By.xpath("//p[normalize-space()='Incorrect Captcha']"));
+		
+		
+		if (captch.getText().contains("Incorrect Captcha")) {
+			Thread.sleep(15000);
+			captch.submit();		
+			
+			
+		}
+			
 				
-				
-				try {
-					driver.findElement(By.className("btn")).click();
-					Thread.sleep(5000);
-					
-					
-				} catch (Exception e) {
-					
-					
-					Thread.sleep(15000);
-					
-					driver.findElement(By.className("btn")).click();
-					// TODO: handle exception
-				}
 		driver.findElement(By.xpath("//span[normalize-space()='Student Information']")).click();
 		driver.findElement(By.xpath("//a[normalize-space()='Student Admission']")).click();
 		driver.findElement(By.name("class_id")).click();
@@ -53,7 +51,7 @@ public class adminstudentadd {
 		driver.findElement(By.xpath("//option[@value='Male']")).click();
 		driver.findElement(By.name("dob")).sendKeys("10/12/2002");
 		
-		driver.findElement(By.id("email")).sendKeys("balramstu1243@gmail.in");
+		driver.findElement(By.id("email")).sendKeys("balramstu12453@gmail.in");
 		driver.findElement(By.name("candidate-pincode")).sendKeys("811211");
 		driver.findElement(By.id("hindi")).click();
 		driver.findElement(By.id("sanskrit")).click();
@@ -70,9 +68,9 @@ js2.executeScript("arguments[0].scrollIntoView(true);", scroll);
 Thread.sleep(10000);
 driver.findElement(By.xpath("//button[@class='btn btn-info pull-right']")).click();
 		
-		
-		
-
+	        }
 	}
+		
 
-}
+	
+
